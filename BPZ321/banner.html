@@ -8,159 +8,138 @@
     font-family:"Liberation Sans", Arial, "DejaVu Sans", sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  .glow { position:absolute; border-radius:50%; filter:blur(2px); pointer-events:none; }
-  .glow.amber   { width:620px; height:420px; left:-140px; top:-190px;
-                   background:radial-gradient(closest-side, rgba(180,83,9,0.34), rgba(180,83,9,0) 72%); }
-  .glow.emerald { width:700px; height:460px; right:-180px; bottom:-240px;
-                   background:radial-gradient(closest-side, rgba(6,78,59,0.55), rgba(6,78,59,0) 72%); }
-  .glow.red     { width:520px; height:300px; left:44%; top:-150px;
-                   background:radial-gradient(closest-side, rgba(127,29,29,0.38), rgba(127,29,29,0) 70%); }
+  /* glows hug the vertical center band so color survives Ultra's crop */
+  .glow { position:absolute; border-radius:50%; pointer-events:none; }
+  .glow.amber   { width:640px; height:340px; left:-160px; top:-50px;
+                   background:radial-gradient(closest-side, rgba(180,83,9,0.36), rgba(180,83,9,0) 72%); }
+  .glow.emerald { width:720px; height:360px; right:-200px; top:-30px;
+                   background:radial-gradient(closest-side, rgba(6,78,59,0.60), rgba(6,78,59,0) 72%); }
+  .glow.red     { width:540px; height:300px; left:42%; top:-40px;
+                   background:radial-gradient(closest-side, rgba(127,29,29,0.34), rgba(127,29,29,0) 70%); }
   .dots {
     position:absolute; inset:0;
-    background-image:radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1.3px);
+    background-image:radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1.3px);
     background-size:22px 22px;
-    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.35));
   }
-  .topline {
-    position:absolute; top:0; left:0; right:0; height:2.5px;
-    background:linear-gradient(90deg,#92400e,#f59e0b 28%,#ef4444 58%,#065f46 100%);
-  }
+  .hairline { position:absolute; left:0; right:0; height:1.5px; opacity:0.55;
+    background:linear-gradient(90deg, rgba(146,64,14,0) 0%, #92400e 12%, #f59e0b 34%, #ef4444 60%, #065f46 88%, rgba(6,95,70,0) 100%); }
+  .hairline.top { top:38px; }
+  .hairline.bot { bottom:38px; opacity:0.35; }
   .content {
     position:relative; height:100%;
-    display:flex; align-items:center; gap:24px;
-    padding:0 36px;
+    display:flex; align-items:center; gap:22px;
+    padding:0 34px;
   }
-  .left { flex:none; width:326px; }
+  .left { flex:none; width:314px; }
   .badge {
-    display:inline-flex; align-items:center; gap:7px;
-    padding:5px 12px; border-radius:999px;
+    display:inline-flex; align-items:center; gap:6px;
+    padding:3.5px 10px; border-radius:999px;
     border:1px solid rgba(255,255,255,0.13);
     background:rgba(255,255,255,0.05);
-    font-size:10.5px; font-weight:bold; letter-spacing:2.4px; color:#d4d4d8;
+    font-size:9.5px; font-weight:bold; letter-spacing:2.2px; color:#d4d4d8;
   }
   .badge .dot {
-    width:6px; height:6px; border-radius:50%;
-    background:#fbbf24; box-shadow:0 0 9px 2px rgba(251,191,36,0.75);
+    width:5px; height:5px; border-radius:50%;
+    background:#fbbf24; box-shadow:0 0 8px 2px rgba(251,191,36,0.75);
   }
-  h1 { margin-top:13px; font-size:40px; line-height:1.04; letter-spacing:-0.6px; color:#fafafa; }
+  h1 { margin-top:9px; font-size:29px; line-height:1.05; letter-spacing:-0.3px; color:#fafafa; white-space:nowrap; }
   h1 .grad {
-    background:linear-gradient(92deg,#fcd34d 0%,#f59e0b 36%,#ef4444 78%,#f87171 100%);
+    background:linear-gradient(92deg,#fcd34d 0%,#f59e0b 40%,#ef4444 100%);
     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
   }
-  .sub { margin-top:11px; font-size:12.5px; line-height:1.5; color:#a1a1aa; max-width:318px; }
+  .sub { margin-top:7px; font-size:11px; line-height:1.4; color:#a1a1aa; }
   .divider {
-    flex:none; width:1px; height:158px;
-    background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.14) 30%, rgba(255,255,255,0.14) 70%, rgba(255,255,255,0) 100%);
+    flex:none; width:1px; height:86px;
+    background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 30%, rgba(255,255,255,0.16) 70%, rgba(255,255,255,0) 100%);
   }
-  .grid {
-    flex:1; display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    grid-template-rows:83px 83px;
-    gap:12px;
+  .rows { flex:1; display:flex; flex-direction:column; gap:9px; }
+  .prow { display:flex; gap:8px; }
+  .pill {
+    display:inline-flex; align-items:center; gap:6px;
+    height:31px; padding:0 12px 0 5px; border-radius:999px;
+    border:1px solid;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 6px 16px -6px rgba(0,0,0,0.5);
   }
-  .card {
-    border-radius:14px; padding:10px 12px;
-    border:1px solid rgba(255,255,255,0.09);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,0.07), 0 12px 26px -10px rgba(0,0,0,0.55);
+  .pchip {
+    width:22px; height:22px; border-radius:999px; border:1px solid;
+    display:flex; align-items:center; justify-content:center;
   }
-  .card-top { display:flex; align-items:center; justify-content:space-between; }
-  .chip {
-    width:26px; height:26px; border-radius:8px;
-    border:1px solid; display:flex; align-items:center; justify-content:center;
-  }
-  .chip svg { width:15px; height:15px; }
-  .num {
-    font-family:"Liberation Mono","DejaVu Sans Mono",monospace;
-    font-size:10px; letter-spacing:1px; color:#71717a;
-  }
-  .label { margin-top:7px; font-size:11.5px; font-weight:bold; line-height:1.3; letter-spacing:0.1px; color:#e4e4e7; }
+  .pchip svg { width:12.5px; height:12.5px; }
+  .pnum { font-family:"Liberation Mono","DejaVu Sans Mono",monospace; font-size:8.5px; letter-spacing:0.5px; opacity:0.9; }
+  .ptxt { font-size:10.5px; font-weight:bold; letter-spacing:0.1px; color:#ececf0; white-space:nowrap; }
 </style></head>
 <body>
   <div class="glow amber"></div>
   <div class="glow red"></div>
   <div class="glow emerald"></div>
   <div class="dots"></div>
-  <div class="topline"></div>
+  <div class="hairline top"></div>
+  <div class="hairline bot"></div>
   <div class="content">
     <div class="left">
       <span class="badge"><span class="dot"></span>MODULE&nbsp;&middot;&nbsp;BPZ321</span>
-      <h1>Business<br><span class="grad">Engineering</span></h1>
-      <div class="sub">From strategy to operational excellence &mdash; engineering the modern enterprise.</div>
+      <h1>Business <span class="grad">Engineering</span></h1>
     </div>
     <div class="divider"></div>
-    <div class="grid">
-    <div class="card" style="background:linear-gradient(140deg,rgba(245,158,11,0.10) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(245,158,11,0.14);border-color:rgba(245,158,11,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+    <div class="rows">
+      <div class="prow">
+      <span class="pill" style="border-color:rgba(245,158,11,0.32);background:linear-gradient(120deg,rgba(245,158,11,0.13),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(245,158,11,0.13);border-color:rgba(245,158,11,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
         </span>
-        <span class="num">01</span>
-      </div>
-      <div class="label">Strategy</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(16,185,129,0.09) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(16,185,129,0.13);border-color:rgba(16,185,129,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+        <span class="pnum" style="color:#fbbf24">01</span>
+        <span class="ptxt">Strategy</span>
+      </span>
+      <span class="pill" style="border-color:rgba(16,185,129,0.32);background:linear-gradient(120deg,rgba(16,185,129,0.12),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
         </span>
-        <span class="num">02</span>
-      </div>
-      <div class="label">Business Model<br>Engineering</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(239,68,68,0.09) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(239,68,68,0.13);border-color:rgba(239,68,68,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="4.5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        <span class="pnum" style="color:#34d399">02</span>
+        <span class="ptxt">Business Model Engineering</span>
+      </span>
+      <span class="pill" style="border-color:rgba(239,68,68,0.32);background:linear-gradient(120deg,rgba(239,68,68,0.12),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="4.5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
         </span>
-        <span class="num">03</span>
-      </div>
-      <div class="label">Service Design</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(146,64,14,0.16) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(146,64,14,0.32);border-color:rgba(180,83,9,0.45)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#e9a36c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <span class="pnum" style="color:#f87171">03</span>
+        <span class="ptxt">Service Design</span>
+      </span>
+      <span class="pill" style="border-color:rgba(180,83,9,0.48);background:linear-gradient(120deg,rgba(146,64,14,0.30),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(146,64,14,0.30);border-color:rgba(180,83,9,0.48)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#eaa76f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </span>
-        <span class="num">04</span>
-      </div>
-      <div class="label">Financial<br>Feasibility</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(16,185,129,0.09) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(16,185,129,0.13);border-color:rgba(16,185,129,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4"/><path d="M8 2.5v4"/><path d="M3 10.5h18"/></svg>
+        <span class="pnum" style="color:#eaa76f">04</span>
+        <span class="ptxt">Financial Feasibility</span>
+      </span></div>
+      <div class="prow">
+      <span class="pill" style="border-color:rgba(16,185,129,0.32);background:linear-gradient(120deg,rgba(16,185,129,0.12),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(16,185,129,0.12);border-color:rgba(16,185,129,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4"/><path d="M8 2.5v4"/><path d="M3 10.5h18"/></svg>
         </span>
-        <span class="num">05</span>
-      </div>
-      <div class="label">Business<br>Planning</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(239,68,68,0.09) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(239,68,68,0.13);border-color:rgba(239,68,68,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4.5" width="15" height="15" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9.5 2v2.5"/><path d="M14.5 2v2.5"/><path d="M9.5 19.5V22"/><path d="M14.5 19.5V22"/><path d="M2 9.5h2.5"/><path d="M2 14.5h2.5"/><path d="M19.5 9.5H22"/><path d="M19.5 14.5H22"/></svg>
+        <span class="pnum" style="color:#34d399">05</span>
+        <span class="ptxt">Business Planning</span>
+      </span>
+      <span class="pill" style="border-color:rgba(239,68,68,0.32);background:linear-gradient(120deg,rgba(239,68,68,0.12),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4.5" width="15" height="15" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9.5 2v2.5"/><path d="M14.5 2v2.5"/><path d="M9.5 19.5V22"/><path d="M14.5 19.5V22"/><path d="M2 9.5h2.5"/><path d="M2 14.5h2.5"/><path d="M19.5 9.5H22"/><path d="M19.5 14.5H22"/></svg>
         </span>
-        <span class="num">06</span>
-      </div>
-      <div class="label">Business &amp; Artificial<br>Intelligence</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(146,64,14,0.16) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(146,64,14,0.32);border-color:rgba(180,83,9,0.45)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#e9a36c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+        <span class="pnum" style="color:#f87171">06</span>
+        <span class="ptxt">Business &amp; Artificial Intelligence</span>
+      </span>
+      <span class="pill" style="border-color:rgba(180,83,9,0.48);background:linear-gradient(120deg,rgba(146,64,14,0.30),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(146,64,14,0.30);border-color:rgba(180,83,9,0.48)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#eaa76f" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
         </span>
-        <span class="num">07</span>
-      </div>
-      <div class="label">Iterative Design<br>&amp; Prototyping</div>
-    </div>
-    <div class="card" style="background:linear-gradient(140deg,rgba(245,158,11,0.10) 0%,rgba(255,255,255,0.04) 46%)">
-      <div class="card-top">
-        <span class="chip" style="background:rgba(245,158,11,0.14);border-color:rgba(245,158,11,0.30)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+        <span class="pnum" style="color:#eaa76f">07</span>
+        <span class="ptxt">Iterative Design &amp; Prototyping</span>
+      </span>
+      <span class="pill" style="border-color:rgba(245,158,11,0.32);background:linear-gradient(120deg,rgba(245,158,11,0.13),rgba(255,255,255,0.035) 60%)">
+        <span class="pchip" style="background:rgba(245,158,11,0.13);border-color:rgba(245,158,11,0.32)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
         </span>
-        <span class="num">08</span>
-      </div>
-      <div class="label">Operational<br>Excellence</div>
-    </div>
+        <span class="pnum" style="color:#fbbf24">08</span>
+        <span class="ptxt">Operational Excellence</span>
+      </span></div>
     </div>
   </div>
 </body></html>
