@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#4A2E18"/>
+      <stop offset="0.5" stop-color="#38210F"/>
+      <stop offset="1" stop-color="#21120A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.28" r="0.7">
+      <stop offset="0" stop-color="#8B5E34" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#8B5E34" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3D998"/>
+      <stop offset="0.5" stop-color="#E2B45E"/>
+      <stop offset="1" stop-color="#C08A3E"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0 H0 V34" fill="none" stroke="#E8C77E" stroke-width="0.6" stroke-opacity="0.06"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3.2"/>
+    </filter>
+    <g id="gear">
+      <g fill="url(#gold)">
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(45)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(90)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(135)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(180)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(225)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(270)"/>
+        <rect x="-1.7" y="-11.5" width="3.4" height="4.2" rx="0.6" transform="rotate(315)"/>
+      </g>
+      <circle r="7.4" fill="none" stroke="url(#gold)" stroke-width="2.4"/>
+      <circle r="2.6" fill="url(#gold)"/>
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="240" fill="url(#bg)"/>
+  <rect width="1200" height="240" fill="url(#grid)"/>
+  <rect width="1200" height="240" fill="url(#glow)"/>
+
+  <!-- Decorative large faint gears -->
+  <g opacity="0.10">
+    <g transform="translate(66,210) scale(4.2)"><use href="#gear"/></g>
+    <g transform="translate(1142,36) scale(5.4)"><use href="#gear"/></g>
+  </g>
+
+  <!-- Inset frame -->
+  <rect x="14" y="14" width="1172" height="212" fill="none" stroke="url(#gold)" stroke-width="1.2" stroke-opacity="0.55" rx="4"/>
+  <rect x="20" y="20" width="1160" height="200" fill="none" stroke="#E8C77E" stroke-width="0.6" stroke-opacity="0.20" rx="3"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="url(#gold)" font-size="34" letter-spacing="7" font-weight="bold">BUSINESS ENGINEERING</text>
+  <line x1="360" y1="63" x2="840" y2="63" stroke="url(#gold)" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="600" y="79" text-anchor="middle" fill="#EAD9BC" font-size="12.5" letter-spacing="5" font-family="Arial, sans-serif">BPZ321  ·  MODULE BLUEPRINT</text>
+
+  <!-- Connector line through nodes -->
+  <line x1="110" y1="132" x2="1090" y2="132" stroke="url(#gold)" stroke-width="1.4" stroke-opacity="0.55"/>
+
+  <!-- ===== NODES ===== -->
+
+  <!-- 1 Strategy (target) -->
+  <g transform="translate(110,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <g stroke="url(#gold)" fill="none" stroke-width="2">
+      <circle r="9"/><circle r="4.6"/>
+    </g>
+    <circle r="1.6" fill="url(#gold)"/>
+  </g>
+  <text x="110" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">01</text>
+  <text x="110" y="178" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif" letter-spacing="0.4">Strategy</text>
+
+  <!-- 2 Business Model Design (canvas grid) -->
+  <g transform="translate(273,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <g stroke="url(#gold)" fill="none" stroke-width="2" stroke-linejoin="round">
+      <rect x="-10" y="-8" width="20" height="16" rx="1.6"/>
+      <line x1="-10" y1="0" x2="10" y2="0"/>
+      <line x1="-3" y1="-8" x2="-3" y2="8"/>
+      <line x1="4" y1="-8" x2="4" y2="8"/>
+    </g>
+  </g>
+  <text x="273" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">02</text>
+  <text x="273" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Business</text>
+  <text x="273" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Model Design</text>
+
+  <!-- 3 Service Excellence (star) -->
+  <g transform="translate(437,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M0,-10 L2.9,-3.6 L9.5,-3.1 L4.5,1.5 L5.9,8 L0,4.4 L-5.9,8 L-4.5,1.5 L-9.5,-3.1 L-2.9,-3.6 Z" fill="url(#gold)"/>
+  </g>
+  <text x="437" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">03</text>
+  <text x="437" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Service</text>
+  <text x="437" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Excellence</text>
+
+  <!-- 4 Operations Excellence (gear) -->
+  <g transform="translate(600,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <g transform="scale(1.05)"><use href="#gear"/></g>
+  </g>
+  <text x="600" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">04</text>
+  <text x="600" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Operations</text>
+  <text x="600" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Excellence</text>
+
+  <!-- 5 Business Intelligence (bars) -->
+  <g transform="translate(763,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <g fill="url(#gold)">
+      <rect x="-9.5" y="1.5" width="5" height="7" rx="0.8"/>
+      <rect x="-2.5" y="-3.5" width="5" height="12" rx="0.8"/>
+      <rect x="4.5" y="-8.5" width="5" height="17" rx="0.8"/>
+    </g>
+    <line x1="-11" y1="9.5" x2="11" y2="9.5" stroke="url(#gold)" stroke-width="1.6"/>
+  </g>
+  <text x="763" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">05</text>
+  <text x="763" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Business</text>
+  <text x="763" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Intelligence</text>
+
+  <!-- 6 Artificial Intelligence (chip) -->
+  <g transform="translate(927,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <g stroke="url(#gold)" stroke-width="2" fill="none" stroke-linecap="round">
+      <rect x="-8" y="-8" width="16" height="16" rx="2.2"/>
+      <line x1="-4" y1="-8" x2="-4" y2="-11.5"/>
+      <line x1="0" y1="-8" x2="0" y2="-11.5"/>
+      <line x1="4" y1="-8" x2="4" y2="-11.5"/>
+      <line x1="-4" y1="8" x2="-4" y2="11.5"/>
+      <line x1="0" y1="8" x2="0" y2="11.5"/>
+      <line x1="4" y1="8" x2="4" y2="11.5"/>
+      <line x1="-8" y1="-4" x2="-11.5" y2="-4"/>
+      <line x1="-8" y1="4" x2="-11.5" y2="4"/>
+      <line x1="8" y1="-4" x2="11.5" y2="-4"/>
+      <line x1="8" y1="4" x2="11.5" y2="4"/>
+    </g>
+    <circle r="3.1" fill="url(#gold)"/>
+  </g>
+  <text x="927" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">06</text>
+  <text x="927" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Artificial</text>
+  <text x="927" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Intelligence</text>
+
+  <!-- 7 Financial & Business Planning (coin) -->
+  <g transform="translate(1090,132)">
+    <circle r="23" fill="#E2B45E" opacity="0.18" filter="url(#soft)"/>
+    <circle r="22" fill="#2A1810" stroke="url(#gold)" stroke-width="2"/>
+    <circle r="9.5" fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <text x="0" y="4.6" text-anchor="middle" fill="url(#gold)" font-size="15" font-weight="bold" font-family="Georgia, serif">$</text>
+  </g>
+  <text x="1090" y="97" text-anchor="middle" fill="#C08A3E" font-size="9.5" letter-spacing="1.5" font-family="Arial, sans-serif">07</text>
+  <text x="1090" y="173" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Financial &amp;</text>
+  <text x="1090" y="189" text-anchor="middle" fill="#F1E4CC" font-size="13" font-family="Arial, sans-serif">Business Planning</text>
+</svg>
